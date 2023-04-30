@@ -21,6 +21,15 @@
 </head>
 
 <body>
+    const finnhub = require('finnhub');
+
+const api_key = finnhub.ApiClient.instance.authentications['api_key'];
+api_key.apiKey = "ch79pb1r01qt83gc55v0ch79pb1r01qt83gc55vg"
+const finnhubClient = new finnhub.DefaultApi()
+
+finnhubClient.companyProfile2({'symbol': 'AAPL'}, (error, data, response) => {
+  console.log(data)
+});
     <div class="info panel panel-default">
         <div class="panel-heading">
             <button id="request" class="btn btn-primary" disabled="disabled">Set pickup</button>
